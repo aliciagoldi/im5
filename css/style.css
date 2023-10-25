@@ -1,0 +1,90 @@
+/* Setzt Grundformatierung für den gesamten Webinhalt */
+* {
+    margin: 0;
+    padding: 0;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: "indivisible", sans-serif;
+    background-color:#fffff3;
+    color: #333333;
+}
+h1 {
+    text-transform: uppercase;
+    color: #333333; 
+    font-size: 7rem; 
+    font-weight: 900;
+}
+h2 {
+    text-transform: uppercase;
+    color: #333333;
+    font-size: 3rem;
+    font-weight: 900;
+}
+h3 {
+    font-weight: 700;
+    font-size: 2rem;
+}
+p {
+    font-weight: 100;
+    font-size: 14px;
+    color: #333333;
+}
+/* Stil für den gesamten Header */
+header {
+    display: flex;
+    height: 100vh;
+    text-align: center;
+}
+.header-title {
+    display: flex; /* Aktiviert Flexbox */
+    flex-direction: column; /* Stapelt die Elemente vertikal */
+    width: 60%;
+    padding: 70px 0 0 0;
+    justify-content: space-between;
+}
+.header-title h1 {
+    /* Stile für h1, eventuell mit margin-bottom, um Abstand zum <p>-Tag zu schaffen */
+   margin-bottom: 200; /* Schiebt den <p>-Tag nach unten */
+}
+.header-image {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end; /* Bild nach rechts ausrichten */
+    overflow: hidden; /* Verhindert das Überlaufen des Inhalts aus dem Container */
+    height: 100vh; /* Setzt die Höhe des Bildcontainers auf 100% der Viewport-Höhe */
+} 
+
+
+
+/* Formatierung des Hauptinhaltsbereichs */
+.content {
+    display: flex;
+}
+/* Stil für die Projektbeschreibung */
+.projektbeschrieb-text {
+    width:40%;
+}
+/* Stil für den Bilderbereich */
+.projektbeschrieb-bilder {
+    width:60%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.projektbeschrieb-bilder img {
+    width: 10%;
+}
+/* Responsive Design: Anpassungen für Mobilgeräte */
+@media (max-width: 768px) {
+    /* Flex-Direction ändern für Stapelanzeige auf kleinen Bildschirmen */
+    header, .content {
+        flex-direction: column;
+    }
+
+    /* Bilder im Header und Inhalt nehmen volle Breite ein */
+    .header-image, .content-images img {
+        width: 100%;
+        margin-right: 0;
+    }
+}
