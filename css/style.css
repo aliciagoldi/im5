@@ -3,18 +3,30 @@
     margin: 0;
     padding: 0;
 }
+
+
+
 body, html {
     margin: 0;
     padding: 0;
     font-family: "indivisible", sans-serif;
     background-color:#fffff3;
     color: #333333;
+    background-image: linear-gradient(
+        to bottom,
+        #f0f0f0 1px,
+        transparent 1px,
+        transparent 20px
+    );
+    background-size: 100% 40px;
 }
+
 h1 {
     text-transform: uppercase;
     color: #333333; 
     font-size: 7rem; 
     font-weight: 900;
+    margin: 200px 0px 0px 15px;    
 }
 h2 {
     text-transform: uppercase;
@@ -35,7 +47,6 @@ p {
 header {
     display: flex;
     height: 100vh;
-    text-align: center;
 }
 .header-title {
     display: flex; /* Aktiviert Flexbox */
@@ -48,12 +59,16 @@ header {
     /* Stile für h1, eventuell mit margin-bottom, um Abstand zum <p>-Tag zu schaffen */
    margin-bottom: 200; /* Schiebt den <p>-Tag nach unten */
 }
+.header-subtitel p {
+    padding-bottom: 15px;
+    text-align: center;
+}
 .header-image {
     width: 40%;
     display: flex;
-    justify-content: flex-end; /* Bild nach rechts ausrichten */
-    overflow: hidden; /* Verhindert das Überlaufen des Inhalts aus dem Container */
-    height: 100vh; /* Setzt die Höhe des Bildcontainers auf 100% der Viewport-Höhe */
+    justify-content: flex-end; 
+    overflow: hidden; 
+    padding: 15px;
 } 
 
 
@@ -61,6 +76,8 @@ header {
 /* Formatierung des Hauptinhaltsbereichs */
 .content {
     display: flex;
+    flex-direction: row;
+    padding: 15px;
 }
 /* Stil für die Projektbeschreibung */
 .projektbeschrieb-text {
@@ -71,9 +88,13 @@ header {
     width:60%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: end;
+    gap: 15px;
 }
 .projektbeschrieb-bilder img {
-    width: 10%;
+    width: 300px;
+    height: auto;
+    object-fit: contain;
 }
 /* Responsive Design: Anpassungen für Mobilgeräte */
 @media (max-width: 768px) {
