@@ -1,4 +1,6 @@
 /* Setzt Grundformatierung für den gesamten Webinhalt */
+
+
 * {
     margin: 0;
     padding: 0;
@@ -69,7 +71,6 @@ header {
 } 
 
 
-
 /* Formatierung des Hauptinhaltsbereichs */
 .content1 {
     display: flex;
@@ -95,7 +96,7 @@ header {
 }
 
 
-
+/*Akkordeon*/
 .content2{
     display: flex;
     padding: 15px;
@@ -114,46 +115,51 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 0;
+    padding: 1rem;
   }
   .accordion-link div {
     display: flex;
   }  
   .icon {
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     font-size: 2rem;
   }
-  .ion-md-arrow-down {
-    display: none;
-  }  
   .dropdown {
     max-height: 0;
     overflow: hidden;
     position: relative;
     transition: max-height 650ms;   
-/* 
-   display: flex;
-    flex-direction: row;
+    display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-*/
+    gap: 10px;
   }  
   .dropdown img {
-/*
-    width: 150px;
-    height: auto;
+    width: 130px;
+    height: 170px;
     object-fit: contain;
-*/
   }
   .accordion-item:target .drodown {
     max-height: 20rem;
   }  
-  .accordion-item:target .ion-md-arrow-forward {
-    display: none;
+  .accordion-item .ion-md-arrow-down {
+    display: none; /* Standardmäßig versteckt */
   }  
-  .accordion-item:target .ion-md-arrow-down {
-    display: block;
+  .accordion-item.open .ion-md-arrow-down {
+    display: inline; /* Sichtbar, wenn Akkordeon geöffnet */
   }  
+  .accordion-item.open .ion-md-arrow-forward {
+    display: none; /* Versteckt, wenn Akkordeon geöffnet */
+  }  
+  .accordion-item .dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 650ms;
+}
+.accordion-item.open .dropdown {
+    max-height: 70rem; /* oder ein anderer Wert, der zu Ihrem Inhalt passt */
+    margin-bottom: 10px;
+}
+
  
   
   
