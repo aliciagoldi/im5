@@ -3,9 +3,6 @@
     margin: 0;
     padding: 0;
 }
-
-
-
 body, html {
     margin: 0;
     padding: 0;
@@ -18,12 +15,12 @@ body, html {
         transparent 1px,
         transparent 20px
     );
-    background-size: 100% 40px;
+    background-size: 100% 15px;
 }
 
 h1 {
     text-transform: uppercase;
-    color: #333333; 
+    color:#333333; 
     font-size: 7rem; 
     font-weight: 900;
     margin: 200px 0px 0px 15px;    
@@ -74,7 +71,7 @@ header {
 
 
 /* Formatierung des Hauptinhaltsbereichs */
-.content {
+.content1 {
     display: flex;
     flex-direction: row;
     padding: 15px;
@@ -96,16 +93,131 @@ header {
     height: auto;
     object-fit: contain;
 }
+
+
+
+.content2{
+    display: flex;
+    padding: 15px;
+    flex-direction: column;
+} 
+.accordion {
+    width: 100%;
+}
+  .accordion-item hr {
+    border: 2px solid #333333;
+  }  
+  .accordion-link {
+    text-decoration: none;
+    color: #333333;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
+  .accordion-link div {
+    display: flex;
+  }  
+  .icon {
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+  .ion-md-arrow-down {
+    display: none;
+  }  
+  .dropdown {
+    max-height: 0;
+    overflow: hidden;
+    position: relative;
+    transition: max-height 650ms;   
+/* 
+   display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+*/
+  }  
+  .dropdown img {
+/*
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+*/
+  }
+  .accordion-item:target .drodown {
+    max-height: 20rem;
+  }  
+  .accordion-item:target .ion-md-arrow-forward {
+    display: none;
+  }  
+  .accordion-item:target .ion-md-arrow-down {
+    display: block;
+  }  
+ 
+  
+  
+
+
+
+
+
 /* Responsive Design: Anpassungen für Mobilgeräte */
 @media (max-width: 768px) {
-    /* Flex-Direction ändern für Stapelanzeige auf kleinen Bildschirmen */
-    header, .content {
+    /* Anpassungen für den gesamten Header */
+    header {
+        flex-direction: column;
+        height: auto; /* Höhe des Headers anpassen */
+    }
+
+    .header-title {
+        width: 100%; /* Textbereich nimmt volle Breite ein */
+        padding: 15px; /* Fügt Padding hinzu */
+        justify-content: center; /* Zentriert den Inhalt vertikal */
+    }
+
+    .header-title h1 {
+        margin: 15px 0; /* Reduziert den Abstand oben und unten für h1 */
+        font-size: 4rem; /* Verkleinert die Schriftgröße für h1 */
+    }
+
+    .header-subtitel p {
+        padding: 0 15px; /* Fügt seitliches Padding hinzu */
+    }
+
+    .header-image {
+        width: 100%; /* Bild im Header nimmt volle Breite ein */
+        padding: 0; /* Entfernt Padding */
+    }
+    .header-image img {
+        width: 100%; /* Bild nimmt volle Breite des Containers ein */
+        height: auto; /* Stellt sicher, dass das Seitenverhältnis erhalten bleibt */
+    }
+
+    /* Anpassungen für den Inhalt */
+    .content {
         flex-direction: column;
     }
 
-    /* Bilder im Header und Inhalt nehmen volle Breite ein */
-    .header-image, .content-images img {
-        width: 100%;
-        margin-right: 0;
+    .projektbeschrieb-text {
+        width: 100%; /* Textbereich nimmt volle Breite ein */
+    }
+
+    .projektbeschrieb-bilder {
+        width: 100%; /* Bilderbereich nimmt volle Breite ein */
+        justify-content: flex-start; /* Bilder linksbündig ausrichten */
+    }
+    .projektbeschrieb-bilder img {
+        width: calc(50% - 15px); /* Stellt die Breite jedes Bildes auf 50% des Containers ein */
+        margin: 7.5px; /* Halbiert den Abstand zwischen den Bildern */
+    }
+
+    h2 {
+        font-size: 2rem; /* Verkleinert die Schriftgröße für h2 */
+    }
+
+    h3 {
+        font-size: 1.5rem; /* Verkleinert die Schriftgröße für h3 */
     }
 }
+
