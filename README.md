@@ -1,2 +1,4 @@
 # im5
- im
+ # mein vorgehen
+ - ich habe das so und so gmeacht
+ 

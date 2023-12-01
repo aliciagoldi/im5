@@ -1,6 +1,4 @@
 /* Setzt Grundformatierung für den gesamten Webinhalt */
-
-
 * {
     margin: 0;
     padding: 0;
@@ -70,7 +68,6 @@ header {
     padding: 15px;
 } 
 
-
 /* Formatierung des Hauptinhaltsbereichs */
 .content1 {
     display: flex;
@@ -94,7 +91,6 @@ header {
     height: auto;
     object-fit: contain;
 }
-
 
 /*Akkordeon*/
 .content2{
@@ -160,37 +156,27 @@ header {
     margin-bottom: 10px;
 }
 
- 
   
-  
-
-
-
-
-
-/* Responsive Design: Anpassungen für Mobilgeräte */
+/* Responsive Design: Anpassungen für Ipad */
 @media (max-width: 768px) {
     /* Anpassungen für den gesamten Header */
     header {
         flex-direction: column;
         height: auto; /* Höhe des Headers anpassen */
     }
-
     .header-title {
         width: 100%; /* Textbereich nimmt volle Breite ein */
         padding: 15px; /* Fügt Padding hinzu */
         justify-content: center; /* Zentriert den Inhalt vertikal */
     }
-
     .header-title h1 {
         margin: 15px 0; /* Reduziert den Abstand oben und unten für h1 */
         font-size: 4rem; /* Verkleinert die Schriftgröße für h1 */
+        text-align: center;
     }
-
     .header-subtitel p {
         padding: 0 15px; /* Fügt seitliches Padding hinzu */
     }
-
     .header-image {
         width: 100%; /* Bild im Header nimmt volle Breite ein */
         padding: 0; /* Entfernt Padding */
@@ -199,31 +185,78 @@ header {
         width: 100%; /* Bild nimmt volle Breite des Containers ein */
         height: auto; /* Stellt sicher, dass das Seitenverhältnis erhalten bleibt */
     }
-
-    /* Anpassungen für den Inhalt */
-    .content {
-        flex-direction: column;
-    }
-
     .projektbeschrieb-text {
         width: 100%; /* Textbereich nimmt volle Breite ein */
     }
-
     .projektbeschrieb-bilder {
-        width: 100%; /* Bilderbereich nimmt volle Breite ein */
         justify-content: flex-start; /* Bilder linksbündig ausrichten */
+        flex-direction: column;
     }
     .projektbeschrieb-bilder img {
-        width: calc(50% - 15px); /* Stellt die Breite jedes Bildes auf 50% des Containers ein */
+        width: 200px;
         margin: 7.5px; /* Halbiert den Abstand zwischen den Bildern */
     }
-
     h2 {
         font-size: 2rem; /* Verkleinert die Schriftgröße für h2 */
     }
 
     h3 {
         font-size: 1.5rem; /* Verkleinert die Schriftgröße für h3 */
+    }
+}
+/* Responsive Design: Anpassungen für Mobilgeräte */
+@media (max-width: 410px) {
+    header {
+        flex-direction: column;
+        height: auto; /* Höhe des Headers anpassen */
+    }
+    .header-title {
+        width: 100%; /* Textbereich nimmt volle Breite ein */
+        justify-content: center; /* Zentriert den Inhalt vertikal */
+        padding: 0;
+    }
+    .header-title h1 {
+        margin: 15px 0; /* Reduziert den Abstand oben und unten für h1 */
+        font-size: 3rem; /* Verkleinert die Schriftgröße für h1 */
+        text-align: center;
+    }
+    .header-image {
+        width: 100%; /* Bild im Header nimmt volle Breite ein */
+        padding: 0; /* Entfernt Padding */
+    }
+    .header-image img {
+        width: 100%; /* Bild nimmt volle Breite des Containers ein */
+        height: auto; /* Stellt sicher, dass das Seitenverhältnis erhalten bleibt */
+    }
+    .content1{
+        display: block;
+        padding: 15px;
+    }
+    .projektbeschrieb-bilder {
+        width: 100% ;
+        justify-content: flex-start; /* Bilder linksbündig ausrichten */
+        flex-direction: row;
+        margin-top: 10px;
+    }
+    .projektbeschrieb-bilder img {
+        width: 150px;
+        margin: 0;
+    }
+    .projektbeschrieb-text {
+        width: 100%; /* Textbereich nimmt volle Breite ein */
+    }
+    h2 {
+        font-size: 2rem; /* Verkleinert die Schriftgröße für h2 */
+    }
+
+    h3 {
+        font-size: 1.5rem; /* Verkleinert die Schriftgröße für h3 */
+    }
+    .accordion-link{
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
