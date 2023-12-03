@@ -1,3 +1,4 @@
+//------------------------------AKKORDEON------------------------------
 document.addEventListener('DOMContentLoaded', (event) => {
     const accordionItems = document.querySelectorAll('.accordion-item');
   
@@ -19,8 +20,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       });
     });
   });
-
-  //Bilder laden
+  //------------------------------BILDER LADEN------------------------------
   function loadImages(month, containerId) {
       fetch(`/json_bilder/${month}.json`)
           .then(response => response.json())
@@ -30,17 +30,52 @@ document.addEventListener('DOMContentLoaded', (event) => {
                   const imgElement = document.createElement('img');
                   imgElement.src = image.file;
                   imgElement.alt = image.alt;
+                  imgElement.loading = "lazy";
+                  imgElement.setAttribute('data-date', image.date);
+                  imgElement.setAttribute('data-name', image.name);
                   container.appendChild(imgElement);
+                  imgElement.onclick = () => openLightbox(imgElement);
               });
           })
           .catch(error => console.error(`Fehler beim Laden der Bilder für ${month}:`, error));
   }
-
   document.addEventListener('DOMContentLoaded', () => {
       loadImages('mai', 'images-mai');
-      loadImages('juni', 'images-juni');
-      // Rufen Sie loadImages für jeden weiteren Monat auf...
+      loadImages('jun', 'images-jun');
+      loadImages('jul', 'images-jul');
+      loadImages('aug', 'images-aug');
+      loadImages('sep', 'images-sep');
+      loadImages('okt', 'images-okt');
+      loadImages('nov', 'images-nov');
   });
+
+ //------------------------------LIGHT BOX------------------------------
+// Funktion zum Öffnen der Lightbox
+function openLightbox(elem) {
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightbox-img');
+  var lightboxCaption = document.getElementById('lightbox-caption');
+
+  lightbox.style.display = "block";
+  lightboxImg.src = elem.src;
+  lightboxCaption.innerHTML = elem.getAttribute('data-date') + " . " + elem.getAttribute('data-name');
+}
+
+
+// Funktion zum Schließen der Lightbox
+function closeLightbox() {
+  var lightbox = document.getElementById('lightbox');
+  lightbox.style.display = "none";
+}
+
+// Event-Listener hinzufügen, wenn das DOM geladen ist
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.dropdown img').forEach(img => {
+      img.onclick = () => openLightbox(img);
+  });
+});
+
+  
 
 
   

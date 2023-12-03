@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
 }
+/*Allgemeines*/
 body, html {
     margin: 0;
     padding: 0;
@@ -17,7 +18,6 @@ body, html {
     );
     background-size: 100% 15px;
 }
-
 h1 {
     text-transform: uppercase;
     color:#333333; 
@@ -52,9 +52,8 @@ header {
     padding: 70px 0 0 0;
     justify-content: space-between;
 }
-.header-title h1 {
-    /* Stile für h1, eventuell mit margin-bottom, um Abstand zum <p>-Tag zu schaffen */
-   margin-bottom: 200; /* Schiebt den <p>-Tag nach unten */
+.header-title h1 {  
+   margin-bottom: 200; 
 }
 .header-subtitel p {
     padding-bottom: 15px;
@@ -67,18 +66,15 @@ header {
     overflow: hidden; 
     padding: 15px;
 } 
-
 /* Formatierung des Hauptinhaltsbereichs */
 .content1 {
     display: flex;
     flex-direction: row;
     padding: 15px;
 }
-/* Stil für die Projektbeschreibung */
 .projektbeschrieb-text {
     width:40%;
 }
-/* Stil für den Bilderbereich */
 .projektbeschrieb-bilder {
     width:60%;
     display: flex;
@@ -91,8 +87,7 @@ header {
     height: auto;
     object-fit: contain;
 }
-
-/*Akkordeon*/
+/*AkkAKKORDEON*/
 .content2{
     display: flex;
     padding: 15px;
@@ -111,7 +106,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 2rem 0;
   }
   .accordion-link div {
     display: flex;
@@ -152,13 +147,39 @@ header {
     transition: max-height 650ms;
 }
 .accordion-item.open .dropdown {
-    max-height: 70rem; /* oder ein anderer Wert, der zu Ihrem Inhalt passt */
+    max-height: 400rem; /* oder ein anderer Wert, der zu Ihrem Inhalt passt */
     margin-bottom: 10px;
 }
+/*----------------------LIGHTBOX----------------------*/
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(255, 255, 255, 0.95); 
+}
+.lightbox img {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 650px;
+}
+#lightbox-caption {
+    text-align: center;
+    color: #333333;
+    padding: 15px 0;
+}
+.dropdown img {
+    cursor: pointer;
+}
 
-  
+
 /* Responsive Design: Anpassungen für Ipad */
-@media (max-width: 768px) {
+@media (max-width: 1060px) {
     /* Anpassungen für den gesamten Header */
     header {
         flex-direction: column;
@@ -185,16 +206,22 @@ header {
         width: 100%; /* Bild nimmt volle Breite des Containers ein */
         height: auto; /* Stellt sicher, dass das Seitenverhältnis erhalten bleibt */
     }
-    .projektbeschrieb-text {
-        width: 100%; /* Textbereich nimmt volle Breite ein */
+    .content1{
+        display: block;
+        padding: 15px;
     }
     .projektbeschrieb-bilder {
+        width: 100% ;
         justify-content: flex-start; /* Bilder linksbündig ausrichten */
-        flex-direction: column;
+        flex-direction: row;
+        margin-top: 10px;
     }
     .projektbeschrieb-bilder img {
-        width: 200px;
-        margin: 7.5px; /* Halbiert den Abstand zwischen den Bildern */
+        width: 250px;
+        margin: 0;
+    }
+    .projektbeschrieb-text {
+        width: 100%; /* Textbereich nimmt volle Breite ein */
     }
     h2 {
         font-size: 2rem; /* Verkleinert die Schriftgröße für h2 */
@@ -204,18 +231,10 @@ header {
         font-size: 1.5rem; /* Verkleinert die Schriftgröße für h3 */
     }
 }
+
 /* Responsive Design: Anpassungen für Mobilgeräte */
 @media (max-width: 410px) {
-    header {
-        flex-direction: column;
-        height: auto; /* Höhe des Headers anpassen */
-    }
-    .header-title {
-        width: 100%; /* Textbereich nimmt volle Breite ein */
-        justify-content: center; /* Zentriert den Inhalt vertikal */
-        padding: 0;
-    }
-    .header-title h1 {
+   .header-title h1 {
         margin: 15px 0; /* Reduziert den Abstand oben und unten für h1 */
         font-size: 3rem; /* Verkleinert die Schriftgröße für h1 */
         text-align: center;
@@ -251,12 +270,6 @@ header {
 
     h3 {
         font-size: 1.5rem; /* Verkleinert die Schriftgröße für h3 */
-    }
-    .accordion-link{
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        padding-left: 0;
-        padding-right: 0;
     }
 }
 
