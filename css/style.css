@@ -187,7 +187,7 @@ header {
     }
     .header-title {
         width: 100%; /* Textbereich nimmt volle Breite ein */
-        padding: 15px; /* Fügt Padding hinzu */
+        padding: 15px 0; /* Fügt Padding hinzu */
         justify-content: center; /* Zentriert den Inhalt vertikal */
     }
     .header-title h1 {
